@@ -1,0 +1,119 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+form#working-alone-checklist-form,
+form#working-alone-checklist-archive-form {
+
+  .main-container {
+    padding-top: 0;
+    margin-top: 0;
+  }
+
+  .date {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .design-contact {
+    clear: left;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .contact-num-1{
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .contact-num-2 {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .employee-working-alone {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .employee-num-1 {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .employee-num-2 {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .row3 {
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  .contact-by {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .explain-other {
+    .make-sm-column(8);
+    .make-md-column(8);
+    .make-lg-column(8);
+  }
+
+  .frequency-of-contact {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .hazard-container {
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  .employee-sign {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .designated-sign {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .submit-button {
+    padding-top: 20px;
+  }
+
+  .alone-link {
+    clear: left;
+    float: right;
+  }
+}

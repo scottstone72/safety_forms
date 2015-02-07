@@ -1,0 +1,107 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+form#hazard-id-form,
+form#hazard-id-archive-form {
+
+  .rig {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .location {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .date {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .time {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  #form-header {
+    .make-sm-column(5);
+    .make-md-column(5);
+    .make-lg-column(5);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
+
+  #shutdown-normal {
+    margin-bottom: 0;
+  }
+
+  .observer {
+//    .pull-right;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .company {
+//    .pull-right;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  #rules-procedures {
+    clear: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .what-you-observe {
+
+    .make-sm-column(7);
+    .make-md-column(7);
+    .make-lg-column(7);
+  }
+
+  .what-action-take {
+    clear: left;
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+    padding-bottom: 30px;
+  }
+
+  .submit-button {
+    clear: both;
+  }
+  
+  .hazard-link {
+    clear: left;
+    float: right;
+  }
+
+}

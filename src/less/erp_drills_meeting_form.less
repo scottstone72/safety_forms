@@ -1,0 +1,77 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+form#erp-drills-meeting-form,
+form#erp-drills-meeting-archive-form{
+
+  .date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .recorded-by {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .bop-drill {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .box {
+    clear: left;
+    .radio {
+      .pull-left;
+      margin-top: 10px;
+      padding-right: 20px;
+    }
+  }
+
+
+
+  .attendance {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .summary-of-drills {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .hazard-review {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .other {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .erp-link {
+    float: right;
+  }
+}

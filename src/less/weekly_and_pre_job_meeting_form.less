@@ -1,0 +1,154 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+form#weekly-and-pre-job-meeting-form,
+form#weekly-and-pre-job-meeting-archive-form {
+
+  .rig {
+    .pull-right;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  #meeting-type {
+    float: left;
+    .form-radios {
+      margin-right: 15px;
+      label {
+        padding-bottom: 10px;
+      }
+
+      div.radio {
+        float: left;
+        padding-left: 20px;
+        margin-top: 5px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+      }
+    }
+  }
+  .date {
+    .pull-right;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .location {
+    clear: left;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(4);
+  }
+
+  .recorded-by {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(4);
+  }
+
+  .attend-cont {
+    clear: left;
+    .attend-name {
+      float: left;
+      .make-sm-column(4);
+      .make-md-column(4);
+      .make-lg-column(4);
+    }
+
+    .attend-position {
+      .make-sm-column(4);
+      .make-md-column(4);
+      .make-lg-column(4);
+    }
+
+    .attend-company {
+      .make-sm-column(4);
+      .make-md-column(4);
+      .make-lg-column(4);
+    }
+
+    .add {
+      margin-top: 15px;
+      margin-right: 15px;
+      .make-sm-column(1);
+      .make-md-column(1);
+      .make-lg-column(1);
+    }
+
+    .remove {
+      margin-top: 15px;
+      .make-sm-column(1);
+      .make-md-column(1);
+      .make-lg-column(1);
+    }
+  }
+
+  .general-safety-topics {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .pre-job-meeting {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .jsa-procedure-review {
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  #hazard-access {
+    float: left;
+    margin-left: 15px;
+    margin-right: 15px;
+    .form-checkboxes {
+      .make-sm-column(12);
+      .make-md-column(12);
+      .make-lg-column(12);
+
+      div.checkbox {
+        float: left;
+        margin-left: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .hazard-discuss {
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+    padding-bottom: 30px;
+  }
+
+  .submit-button {
+    clear: left;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .weekly-link {
+    float: right;
+  }
+}

@@ -1,0 +1,110 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+form#monthly-vehicle-inspection-report-form,
+form#monthly-vehicle-inspection-report-archive-form {
+
+  .vehicle-make {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .license-plate-num {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .vehicle-model {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .vehicle-mileage {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .vehicle-assigned-to {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .cont-container {
+    clear: left;
+
+    .cont-title {
+      padding-bottom: 0;
+      margin-bottom: 0;
+
+      .panel {
+        margin-bottom: 5px;
+//        padding-bottom: 0;
+        .panel-body {
+          background-color: #e7a229;
+        }
+      }
+
+      .cont-radio {
+        .make-sm-column(5);
+        .make-md-column(5);
+        .make-lg-column(5);
+        .radio {
+          .pull-left;
+          margin-top: 5px;
+          padding-right: 15px;
+          margin-bottom: 0;
+
+          :last-child {
+            margin-bottom: 15px;
+          }
+        }
+      }
+
+      .cont-comm {
+        .make-sm-column(7);
+        .make-md-column(7);
+        .make-lg-column(7);
+        .form-group {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .managers-sign {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .drivers-sign {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .submit-button {
+    padding-top: 30px;
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+}

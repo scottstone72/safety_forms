@@ -1,0 +1,51 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+
+form#daily-crane-pre-op-checklist-form,
+form#daily-crane-pre-op-checklist-archive-form {
+
+  .top {
+    margin-bottom: 30px;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .desc {
+    clear: left;
+    .make-sm-column(5);
+    .make-md-column(5);
+    .make-lg-column(5);
+  }
+
+  .ok {
+    .make-sm-column(1);
+    .make-md-column(1);
+    .make-lg-column(1);
+  }
+
+  .repair {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .comments {
+    clear: left;
+    margin-bottom: 30px;
+  }
+
+  .safety-form-link {
+    .pull-right;
+  }
+
+}

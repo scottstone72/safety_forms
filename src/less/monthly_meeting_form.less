@@ -1,0 +1,91 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+form#monthly-meeting-form,
+form#monthly-meeting-archive-form {
+
+  .rig,
+  .job,
+  .date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .outstanding-concerns,
+  .rig-inspect {
+    .make-sm-column(8);
+    .make-md-column(8);
+    .make-lg-column(8);
+  }
+
+  .out-target-date,
+  .rig-target-date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .chairman,
+  .recorded-by {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .driller,
+  .derrick,
+  .motor,
+  .floor-1,
+  .floor-2,
+  .rig-manager {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+  
+  .guests {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+    clear: left;
+  }
+
+  .received-in-office,
+  .discussed,
+  .assigned-to,
+  .complete-date {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .signed {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .submit-button {
+    padding-top: 30px;
+  }
+
+  .meeting-link {
+    float: right;
+  }
+
+}

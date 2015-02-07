@@ -1,0 +1,906 @@
+<?php
+
+/*
+ * Implements hook_schema().
+ */
+function safety_forms_schema() {
+
+  $schema = array();
+
+  /** Working Alone Form */
+  $schema = array(
+    'working_alone_checklist_form' => array(
+      'description' => 'Table to hold Working Alone Forms',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date of form submission.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'employee_working_alone' => array(
+          'description' => 'Employee who is working alone.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'working_alone_data' => array(
+          'description' => 'Serialized data from form submission.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+      'indexes' => array(
+        'date' => array('date'),
+        'employee_working_alone' => array('employee_working_alone'),
+      )
+    ),
+    'near_miss_form' => array(
+      'description' => 'Near Miss Form Reports',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'employee_name' => array(
+          'description' => 'Employee\'s Name.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date submitted.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'location' => array(
+          'description' => 'Location',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'working_for' => array(
+          'description' => 'Company doing the work.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'incident' => array(
+          'description' => 'Type of incident.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+//        'hazard' => array(
+//          'description' => 'Is this Hazard?',
+//          'type' => 'varchar',
+//          'length' => '11',
+//          'not null' => TRUE,
+//        ),
+//        'near_miss' => array(
+//          'description' => 'Is this Near Miss?',
+//          'type' => 'varchar',
+//          'length' => '11',
+//          'not null' => TRUE,
+//        ),
+        'description' => array(
+          'description' => 'Incident description.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'reported_to' => array(
+          'description' => 'Who near miss was reported to.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'action_taken' => array(
+          'description' => 'Action taken.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'follow_up_by' => array(
+          'description' => 'Followed up by.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'follow_up_date' => array(
+          'description' => 'Follow up date.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+      'indexes' => array(
+        'date' => array('date'),
+        'employee_name' => array('employee_name'),
+        'location' => array('location'),
+      )
+    ),
+    'hazard_id_form' => array(
+      'description' => 'Hazard identification',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'incident_type' => array(
+          'description' => 'Type of Incident.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'shutdown_type' => array(
+          'description' => 'Type of Shutdown.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+//        'no_comp_at_risk' => array(
+//          'description' => 'Is this Non Compliance / At Risk?',
+//          'type' => 'varchar',
+//          'length' => '64',
+//          'not null' => TRUE,
+//        ),
+//        'near_miss' => array(
+//          'description' => 'Is this a Near Miss?',
+//          'type' => 'varchar',
+//          'length' => '64',
+//          'not null' => TRUE,
+//        ),
+//        'hazardous_condition' => array(
+//          'description' => 'Is this a Hazardous Condition?',
+//          'type' => 'varchar',
+//          'length' => '64',
+//          'not null' => TRUE,
+//        ),
+        'rig' => array(
+          'description' => 'Rig #',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'location' => array(
+          'description' => 'Location',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'hazard_id_data' => array(
+          'description' => 'Hazard ID form data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date of incident.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+    'erp_drills_meeting_form' => array(
+      'description' => 'ERP Drills Meeting Forms.',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'recorded_by' => array(
+          'description' => 'Drill recorded by.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'drill_type' => array(
+          'description' => 'Type of drill.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+//        'bop_drill' => array(
+//          'description' => 'Is this a BOP Drill?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'man_down' => array(
+//          'description' => 'Is this a Man Down Drill?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'confined_space' => array(
+//          'description' => 'Is this a Confined Space Drill?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'h2s' => array(
+//          'description' => 'Is this a H2S Drill?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'fire' => array(
+//          'description' => 'Is this a Fire Drill?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'evacuation' => array(
+//          'description' => 'Is this a Site Evacuation?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'high_angle_rescue' => array(
+//          'description' => 'Is this a High Angle Rescue?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'natural_disaster' => array(
+//          'description' => 'Is this a Natural Disaster?',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+        'erp_form_data' => array(
+          'description' => 'ERP Form data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+      'index' => array(
+        'date' => array('date'),
+      ),
+    ),
+    'work_permits_form' => array(
+      'description' => 'Work Permits Forms',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'permit_num' => array(
+          'description' => 'Permit #',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'issued_to' => array(
+          'description' => 'Issued to.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'location_work' => array(
+          'description' => 'Location of work.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'permit_type' => array(
+          'description' => 'Type of permit.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+//        'rig_site_orientation' => array(
+//          'description' => 'Permit for Rig site orientation.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'cold_work' => array(
+//          'description' => 'Permit for Cold Work.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'hot_work' => array(
+//          'description' => 'Permit for Hot Work.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'electrical' => array(
+//          'description' => 'Permit for Electrical Work.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'lockout_tagout' => array(
+//          'description' => 'Permit for Lockout / Tag out.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'high_press' => array(
+//          'description' => 'Permit for High Pressure Work.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'tank_cleaning' => array(
+//          'description' => 'Permit for Tank Cleaning.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+//        'confined_entry' => array(
+//          'description' => 'Permit for Confined Space.',
+//          'type' => 'int',
+//          'unsigned' => TRUE,
+//          'not null' => TRUE,
+//        ),
+        'other_permit' => array(
+          'description' => 'Any other permit required.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'hazard_prior_stat' => array(
+          'description' => 'Hazard Priority Status.',
+          'type' => 'varchar',
+          'length' => '11',
+          'not null' => TRUE,
+        ),
+        'valid_from' => array(
+          'description' => 'Permit valid from...',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'valid_to' => array(
+          'description' => 'Permit valid to...',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'renewed_from' => array(
+          'description' => 'Permit renewed from...',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'work_permit_data' => array(
+          'description' => 'Work Permit Data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+    'weekly_and_pre_job_meeting_form' => array(
+      'description' => 'Weekly and Pre-Job Meetings Forms',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'rig' => array(
+          'description' => 'Rig #',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'form_type' => array(
+          'description' => 'The type of form submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+//        'weekly' => array(
+//          'description' => 'Is this a Weekly meeting?',
+//          'type' => 'varchar',
+//          'length' => '32',
+//          'not null' => TRUE,
+//        ),
+//        'jsa_review' => array(
+//          'description' => 'Is this a JSA Review meeting?',
+//          'type' => 'varchar',
+//          'length' => '32',
+//          'not null' => TRUE,
+//        ),
+//        'pre_job' => array(
+//          'description' => 'Is this a Pre-Job meeting?',
+//          'type' => 'varchar',
+//          'length' => '32',
+//          'not null' => TRUE,
+//        ),
+//        'hazard_assessment' => array(
+//          'description' => 'Is this a Hazard Assessment meeting.',
+//          'type' => 'varchar',
+//          'length' => '32',
+//          'not null' => TRUE,
+//        ),
+        'date' => array(
+          'description' => 'Date meeting took place.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'location' => array(
+          'description' => 'Location of meeting.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'recorded_by' => array(
+          'description' => 'Meeting recorded by.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'weekly_pre_job_data' => array(
+          'description' => 'Additional form data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+    'monthly_meeting_form' => array(
+      'description' => 'Monthly Meetings Forms',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'rig' => array(
+          'description' => 'Rig #',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'job' => array(
+          'description' => 'Job being done.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date of meeting.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'received_in_office' => array(
+          'description' => 'Date received in office.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'discussed' => array(
+          'description' => 'Date of meeting discussion.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'assigned_to' => array(
+          'description' => 'Assigned to.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'complete_date' => array(
+          'description' => 'Date Completed.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'signed' => array(
+          'description' => 'Date signed.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'monthly_meeting_data' => array(
+          'description' => 'Monthly Meeting data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+    'jsa_form' => array(
+      'description' => 'Job Safety Analysis Forms',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'jsa_num' => array(
+          'description' => 'JSA #',
+          'type' => 'varchar',
+          'length' => '16',
+          'not null' => TRUE,
+        ),
+        'rig_num' => array(
+          'description' => 'Rig #',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'supervisor' => array(
+          'description' => 'Supervisor in charge.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'image_path' => array(
+          'description' => 'Path to image folder.',
+          'type' => 'varchar',
+          'length' => '512',
+          'default' => '',
+          'not null' => TRUE,
+        ),
+        'company_image_fid' => array(
+          'description' => 'Image file ID (fid)',
+          'type' => 'varchar',
+          'length' => '64',
+          'default' => '',
+          'not null' => TRUE,
+        ),
+        'attached_photos' => array(
+          'description' => 'Are photos attached to form?',
+          'type' => 'varchar',
+          'length' => '16',
+          'not null' => TRUE,
+        ),
+//        'photo_no' => array(
+//          'description' => 'Are there photos attached?',
+//          'type' => 'varchar',
+//          'length' => '16',
+//          'not null' => TRUE,
+//        ),
+//        'photo_yes' => array(
+//          'description' => 'Are there photos attached?',
+//          'type' => 'varchar',
+//          'length' => '16',
+//          'not null' => TRUE,
+//        ),
+        'jsa_form_data' => array(
+          'description' => 'JSA Form data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+
+    'daily_crane_pre_op_checklist_form' => array(
+      'description' => 'Daily Crane Pre-Op Checklist Form',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary Id.',
+          'type' => 'serial',
+          'not null' => TRUE,
+        ),
+        'inspected_by' => array(
+          'description' => 'Inspected by.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'signature' => array(
+          'description' => 'Signature.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'crane_data' => array(
+          'description' => 'Serialized crane data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+
+    'damage_report_form' => array(
+      'description' => 'For storing damage reports for equipment items.',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'item_desc' => array(
+          'description' => 'Description of item',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'unit_num' => array(
+          'description' => 'Unit Number on equipment item.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date damage was noticed.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'damage_noted_by' => array(
+          'description' => 'Person who noted the damage.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'damage_data' => array(
+          'description' => 'Damage done to equipment item.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'total_repair_cost' => array(
+          'description' => 'Total repair cost for all repairs.',
+          'type' => 'varchar',
+          'length' => '16',
+          'not null' => TRUE,
+        ),
+        'company_rep_name' => array(
+          'description' => 'Company rep name.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'company_rep_signature' => array(
+          'description' => 'Company rep signature.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'ponderosa_rep_name' => array(
+          'description' => 'Ponderosa rep name.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'ponderosa_rep_signature' => array(
+          'description' => 'Ponderosa rep signature.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+
+    'monthly_vehicle_inspection_report_form' => array(
+      'description' => 'Monthly Vehicle Inspections.',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'make' => array(
+          'description' => 'Make of vehicle.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'license_plate_num' => array(
+          'description' => 'License Plate Number.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'model' => array(
+          'description' => 'Vehicle Model.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'mileage' => array(
+          'description' => 'Vehicle Mileage.',
+          'type' => 'varchar',
+          'length' => '16',
+          'not null' => TRUE,
+        ),
+        'assigned_to' => array(
+          'description' => 'Person who has been assigned vehicle.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'vehicle_data' => array(
+          'description' => 'Serialized vehicle data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'remarks' => array(
+          'description' => 'Remarks about the vehicle.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date of vehicle inspection.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'managers_sign' => array(
+          'description' => 'Managers Signature.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'drivers_sign' => array(
+          'description' => 'Drivers Signature.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+
+    'shop_and_yard_inspection_form' => array(
+      'description' => 'Submissions for Shop and Yard Inspections.',
+      'fields' => array(
+        'id' => array(
+          'description' => 'Primary ID for table.',
+          'type' => 'serial',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+        'date' => array(
+          'description' => 'Date that form was submitted.',
+          'type' => 'varchar',
+          'length' => '32',
+          'not null' => TRUE,
+        ),
+        'submitted_by' => array(
+          'description' => 'Person who submitted the form.',
+          'type' => 'varchar',
+          'length' => '64',
+          'not null' => TRUE,
+        ),
+        'shop_yard_data' => array(
+          'description' => 'Serialized shop and yard form data.',
+          'type' => 'text',
+          'not null' => TRUE,
+        ),
+        'timestamp' => array(
+          'description' => 'Timestamp.',
+          'type' => 'int',
+          'unsigned' => TRUE,
+          'not null' => TRUE,
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+
+
+);
+  return $schema;
+}
+
+/*
+ * Implements hook_update_N().
+ */
+function safety_forms_update_7000() {
+
+  drupal_install_schema('working_alone_checklist_form');
+  drupal_install_schema('near_miss_form');
+  drupal_install_schema('hazard_id_form');
+  drupal_install_schema('erp_drills_meeting_form');
+  drupal_install_schema('work_permit_form');
+  drupal_install_schema('weekly_and_pre_job_meeting_form');
+  drupal_install_schema('monthly_meeting_form');
+  drupal_install_schema('jsa_form');
+  drupal_install_schema('daily_crane_pre_op_checklist_form');
+  drupal_install_schema('damage_report_form');
+  drupal_install_schema('monthly_vehicle_inspection_report_form');
+  drupal_install_schema('shop_and_yard_inspection_form');
+}
