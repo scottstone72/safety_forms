@@ -1,0 +1,388 @@
+<?php
+
+/**
+ *    Implements hook_permission().
+ */
+function safety_forms_permission() {
+
+  return array(
+    'view safety forms' => array(
+      'title' => t('Access Transfer Request Form'),
+      'description' => t('Access to the safety forms page.'),
+      'restrict access' => TRUE,
+    ),
+    //    'view transfer approvals and submissions' => array(
+    //      'title' => t('Access Transfer Approvals and Submissions'),
+    //      'description' => t('Access the transfer approval and submissions pages.'),
+    //      'restrict access' => TRUE,
+    //    ),
+  );
+}
+
+
+/**
+ * Implements hook_menu()
+ */
+function safety_forms_menu() {
+
+  $items = array();
+
+  // This is the main page that holds the forms
+  $items['safety_forms'] = array(
+    'title' => 'Safety Forms',
+    'page callback' => array('safety_forms_page'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'safety_forms.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/archive'] = array(
+    'title' => 'Safety Forms Archive',
+    'page callback' => array('safety_forms_archive_main'),
+    //    'page arguments' => array('safety_forms_archive_main'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'safety_forms_archive.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+
+  $items['safety_forms/working_alone_checklist_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('working_alone_checklist_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'working_alone_checklist_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/working_alone_checklist_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('working_alone_checklist_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'working_alone_checklist_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/near_miss_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('near_miss_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'near_miss_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/near_miss_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('near_miss_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'near_miss_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/weekly_and_pre_job_meeting_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('weekly_and_pre_job_meeting_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'weekly_and_pre_job_meeting_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/weekly_and_pre_job_meeting_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('weekly_and_pre_job_meeting_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'weekly_and_pre_job_meeting_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/work_permit_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('work_permits_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'work_permit_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/work_permit_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('work_permit_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'work_permit_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/monthly_meeting_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('monthly_meeting_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'monthly_meeting_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/monthly_meeting_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('monthly_meeting_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'monthly_meeting_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/jsa_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('jsa_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'jsa_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/jsa_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('jsa_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'jsa_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/hazard_id_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('hazard_id_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'hazard_id_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/hazard_id_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('hazard_id_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'hazard_id_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  $items['safety_forms/erp_drills_meeting_form'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('erp_drills_meeting_form'),
+    'access arguments' => array('view safety forms'),
+    'file' => 'erp_drills_meeting_form.inc',
+    'type' => MENU_SUGGESTED_ITEM,
+  );
+
+  $items['safety_forms/erp_drills_meeting_form_archive/%'] = array(
+    'page callback' => array('drupal_get_form'),
+    'page arguments' => array('erp_drills_meeting_archive_form', 2),
+    'access arguments' => array('view safety forms'),
+    'file' => 'erp_drills_meeting_archive.inc',
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
+
+/**
+ * Implements hook_elements().
+ */
+function safety_forms_element_info() {
+
+  $path = drupal_get_path('module', 'safety_forms');
+
+  $types['jsa_analysis'] = array(
+    '#input' => TRUE,
+    '#tree' => TRUE,
+    '#process' => array('jsa_analysis_element_process'),
+    //      '#element_validate' => array('safety_forms_element_validate'),
+    //      '#value_callback' => 'example_gitbucket_element_value_callback',
+    '#theme' => array('jsa_element'),
+    '#theme_wrappers' => array('form_element'),
+//    '#attached' => array(
+//      'css' => array(
+//        $path . '/dist/css/min/jsa_form.min.css'
+//      ),
+//    ),
+  );
+
+
+  $types['job_risk'] = array(
+    '#input' => TRUE,
+    '#tree' => TRUE,
+    '#process' => array('job_risk_element_process'),
+    //      '#element_validate' => array('safety_forms_element_validate'),
+    //      '#value_callback' => 'example_gitbucket_element_value_callback',
+    '#theme' => array('job_risk_element'),
+    '#theme_wrappers' => array('form_element'),
+    //    '#attached' => array(
+    //      'css' => array(
+    //        $path . '/dist/css/min/jsa_form.min.css'
+    //      ),
+    //    ),
+  );
+
+  return $types;
+}
+
+/**
+ * Generates form elements for my element.
+ */
+function job_risk_element_process($element, &$form_state) {
+
+  $element['jsa_risk'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Job Risk Analysis'),
+  );
+
+  $element['jsa_risk']['frequency'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Frequency (of task)'),
+    '#prefix' => '<div class="frequency">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_risk']['possibility'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Possibility (of harm)'),
+    '#prefix' => '<div class="possibility">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_risk']['severity'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Severity (consequence)'),
+    '#prefix' => '<div class="frequency">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_risk']['maximum_rank'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Maximum Rank'),
+    '#prefix' => '<div class="maximum-rank">',
+    '#suffix' => '</div>',
+  );
+
+  return $element;
+}
+
+
+/**
+ * Generates form elements for my element.
+ */
+function jsa_analysis_element_process($element, &$form_state) {
+
+//  $element['jsa_analysis'] = array(
+//    '#type' => 'fieldset',
+////    '#title' => t('Risk Assessment #' . ($k + 1)),
+//    '#attributes' => array('class' => array('jsa-analysis-inner')),
+//  );
+
+  // Add the custom elements
+  $element['jsa_analysis']['job_steps'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Job Steps'),
+//    '#required' => TRUE,
+    '#prefix' => '<div class="job-steps">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['hazards'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Hazards'),
+//    '#required' => TRUE,
+    '#prefix' => '<div class="hazards">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['risk_level'] = array(
+    '#type' => 'select',
+    '#title' => t('Risk Level'),
+//    '#required' => TRUE,
+    '#options' => array(
+      'no_immediate_danger' => 'NO IMMEDIATE DANGER',
+      'low' => 'LOW',
+      'moderate' => 'MODERATE',
+      'high' => 'HIGH',
+    ),
+    '#prefix' => '<div class="risk-level">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['steps_to_control_hazard'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Steps To Control Hazard'),
+//    '#required' => TRUE,
+    '#prefix' => '<div class="job-steps">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['control_method'] = array(
+    '#type' => 'select',
+    '#title' => t('Control Method'),
+//    '#required' => TRUE,
+    '#options' => array(
+      'engineering' => 'ENGINEERING',
+      'administration' => 'ADMINISTRATION',
+      'ppe' => 'PPE',
+    ),
+    '#prefix' => '<div class="steps-to-control-hazard">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['new_risk_level'] = array(
+    '#type' => 'select',
+    '#title' => t('New Risk Level'),
+//    '#required' => TRUE,
+    '#options' => array(
+      'no_immediate_danger' => 'NO IMMEDIATE DANGER',
+      'low' => 'LOW',
+      'moderate' => 'MODERATE',
+      'high' => 'HIGH',
+    ),
+    '#prefix' => '<div class="new-risk-level">',
+    '#suffix' => '</div>',
+  );
+
+  $element['jsa_analysis']['date_reviewed'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Date JSA Reviewed'),
+//    '#required' => TRUE,
+    '#attributes' => array('class' => array('ui-datepicker-date-reviewed')),
+    '#prefix' => '<div class="date-reviewed">',
+    '#suffix' => '</div>',
+  );
+
+  return $element;
+}
+
+/**
+ * Implements hook_theme()
+ * Register our the custom themes
+ */
+function safety_forms_theme() {
+
+  return array(
+    'jsa_element' => array(
+      'render element' => 'element',
+    ),
+    'job_risk_element' => array(
+      'render element' => 'element',
+    ),
+  );
+}
+
+/**
+ * Theme for our custom job_risk_element
+ */
+function theme_job_risk_element($variables) {
+
+  $element = $variables['element'];
+
+  return drupal_render_children($element);
+}
+
+/**
+ * Theme for our custom jsa_element
+ */
+function theme_jsa_element($variables) {
+
+  $element = $variables['element'];
+
+  return drupal_render_children($element);
+}
+

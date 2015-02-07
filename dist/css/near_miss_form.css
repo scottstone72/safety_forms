@@ -1,0 +1,392 @@
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}
+.form-horizontal .form-group-sm .form-control {
+  height: 33px;
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.form-horizontal .form-group-lg .form-control {
+  height: 49px;
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.btn-group-lg > .btn {
+  padding: 10px 16px;
+  font-size: 20px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.btn-group-sm > .btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.btn-group-xs > .btn {
+  padding: 1px 5px;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 3px;
+}
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.nav:before,
+.nav:after,
+.navbar:before,
+.navbar:after,
+.navbar-header:before,
+.navbar-header:after,
+.navbar-collapse:before,
+.navbar-collapse:after,
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.modal-footer:before,
+.modal-footer:after {
+  content: " ";
+  display: table;
+}
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
+.nav:after,
+.navbar:after,
+.navbar-header:after,
+.navbar-collapse:after,
+.pager:after,
+.panel-body:after,
+.modal-footer:after {
+  clear: both;
+}
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+#ui-datepicker-div {
+  display: none;
+}
+form#near-miss-form .employee-name,
+form#near-miss-archive-form .employee-name {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .employee-name,
+  form#near-miss-archive-form .employee-name {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .employee-name,
+  form#near-miss-archive-form .employee-name {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .employee-name,
+  form#near-miss-archive-form .employee-name {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+form#near-miss-form .date,
+form#near-miss-archive-form .date {
+  float: right !important;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .date,
+  form#near-miss-archive-form .date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .date,
+  form#near-miss-archive-form .date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .date,
+  form#near-miss-archive-form .date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+form#near-miss-form .location,
+form#near-miss-archive-form .location {
+  clear: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .location,
+  form#near-miss-archive-form .location {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .location,
+  form#near-miss-archive-form .location {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .location,
+  form#near-miss-archive-form .location {
+    float: left;
+    width: 50%;
+  }
+}
+form#near-miss-form .working-for,
+form#near-miss-archive-form .working-for {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .working-for,
+  form#near-miss-archive-form .working-for {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .working-for,
+  form#near-miss-archive-form .working-for {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .working-for,
+  form#near-miss-archive-form .working-for {
+    float: left;
+    width: 50%;
+  }
+}
+form#near-miss-form #incident-box,
+form#near-miss-archive-form #incident-box {
+  margin-top: 35px;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form #incident-box,
+  form#near-miss-archive-form #incident-box {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form #incident-box,
+  form#near-miss-archive-form #incident-box {
+    float: left;
+    width: 25%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form #incident-box,
+  form#near-miss-archive-form #incident-box {
+    float: left;
+    width: 25%;
+  }
+}
+form#near-miss-form .description,
+form#near-miss-archive-form .description {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .description,
+  form#near-miss-archive-form .description {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .description,
+  form#near-miss-archive-form .description {
+    float: left;
+    width: 75%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .description,
+  form#near-miss-archive-form .description {
+    float: left;
+    width: 75%;
+  }
+}
+form#near-miss-form .reported-to,
+form#near-miss-archive-form .reported-to {
+  clear: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .reported-to,
+  form#near-miss-archive-form .reported-to {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .reported-to,
+  form#near-miss-archive-form .reported-to {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .reported-to,
+  form#near-miss-archive-form .reported-to {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+form#near-miss-form .action-taken,
+form#near-miss-archive-form .action-taken {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .action-taken,
+  form#near-miss-archive-form .action-taken {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .action-taken,
+  form#near-miss-archive-form .action-taken {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .action-taken,
+  form#near-miss-archive-form .action-taken {
+    float: left;
+    width: 66.66666667%;
+  }
+}
+form#near-miss-form .follow-up-by,
+form#near-miss-archive-form .follow-up-by {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .follow-up-by,
+  form#near-miss-archive-form .follow-up-by {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .follow-up-by,
+  form#near-miss-archive-form .follow-up-by {
+    float: left;
+    width: 50%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .follow-up-by,
+  form#near-miss-archive-form .follow-up-by {
+    float: left;
+    width: 50%;
+  }
+}
+form#near-miss-form .follow-up-date,
+form#near-miss-archive-form .follow-up-date {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 768px) {
+  form#near-miss-form .follow-up-date,
+  form#near-miss-archive-form .follow-up-date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 992px) {
+  form#near-miss-form .follow-up-date,
+  form#near-miss-archive-form .follow-up-date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+@media (min-width: 1200px) {
+  form#near-miss-form .follow-up-date,
+  form#near-miss-archive-form .follow-up-date {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+form#near-miss-form .submit-button,
+form#near-miss-archive-form .submit-button {
+  clear: left;
+  padding-top: 20px;
+}
+form#near-miss-form .near-miss-link,
+form#near-miss-archive-form .near-miss-link {
+  clear: both;
+  float: right;
+  padding-top: 10px;
+}

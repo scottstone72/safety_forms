@@ -1,0 +1,228 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+@media print {
+  .form-type-textfield {
+    margin-bottom: 5px;
+  }
+}
+
+form#jsa-form,
+form#jsa-archive-form {
+
+  .jsa-num {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .job-task {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .page-of {
+    clear: left;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .rig-num {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .supervisor {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .risk-cont {
+    clear: left;
+  }
+
+  .jsa-analysis-inner {
+    border: 2px solid @btn-danger-bg;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #e7a229;
+    @media print {
+      background-color: #FFFFFF;
+      margin-bottom: 20px;
+      border: 2px solid #e7a229;
+    }
+  }
+
+  .add-risk, .remove-risk {
+    margin-bottom: 30px;
+    float: left;
+    .make-sm-column(2);
+    .make-md-column(2);
+    .make-lg-column(2);
+  }
+
+  .weak-links {
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  #jsa-review-select {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 15px;
+    margin-right: 15px;
+    .user-message {
+      color: #d20b00;
+      font-size: 1.1em;
+      padding-bottom: 15px;
+    }
+  }
+
+  .job-risk {
+    .make-sm-column(5);
+    .make-md-column(5);
+    .make-lg-column(5);
+  }
+
+  #company-image-fid-ajax-wrapper {
+    clear: left;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .attached-photos {
+    clear: left;
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  .job-steps {
+    clear: left;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .hazards {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .risk-level {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .steps-to-control-hazard{
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .new-risk-level {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .date-reviewed {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  #upload-container {
+    margin-bottom: 50px;
+    .make-sm-column(12);
+    .make-md-column(12);
+    .make-lg-column(12);
+  }
+
+  #wrapper-for-images {
+    clear: left;
+  }
+
+  .plupload_filelist_header,
+  .plupload_filelist_footer {
+    border: 1px solid #EEE;
+    padding: 5px;
+    background: #E7A229;
+    font-family: 'Cabin Condensed',sans-serif;
+    font-size: 18px;
+  }
+
+  .plupload_filelist_footer {
+    height: auto;
+  }
+
+  #edit-upload_browse,
+  .plupload_button {
+    .plupload_filelist_header;
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  a#edit-upload_browse:hover,
+  a.plupload_start:hover {
+    color: #e00f03;
+    border-color: #e00f03;
+  }
+
+  .plupload_filelist {
+    border: 1px solid #FFFFFF;
+  }
+
+//  .plupload_start {
+//    display: none;
+//  }
+
+  .uploaded-images {
+    float: left;
+    padding-bottom: 20px;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .submit {
+    clear: left;
+  }
+
+  .jsa-link {
+    clear: left;
+    float: right;
+  }
+
+}

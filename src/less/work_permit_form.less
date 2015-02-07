@@ -1,0 +1,126 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+}
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+form#work-permits-form,
+form#work-permit-archive-form {
+
+  .permit-num {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .date {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .issued-to {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .location {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .scope {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  #permit-type {
+
+    .form-radios {
+      .radio {
+        float: left;
+        padding-left: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .other-permit {
+    padding-top: 20px;
+    clear: left;
+    .make-sm-column(9);
+    .make-md-column(9);
+    .make-lg-column(9);
+  }
+
+  .hazard-prior-stat {
+    .make-sm-column(3);
+    .make-md-column(3);
+    .make-lg-column(3);
+  }
+
+  .hazard {
+    clear: left;
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .control {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .rig-driller-approv {
+    .make-sm-column(6);
+    .make-md-column(6);
+    .make-lg-column(6);
+  }
+
+  .valid-from {
+    clear: left;
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .valid-to {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .renewed-from {
+    .make-sm-column(4);
+    .make-md-column(4);
+    .make-lg-column(4);
+  }
+
+  .submit-button {
+    clear: left;
+    padding-top: 30px;
+  }
+
+  .user-message {
+    padding-bottom: 20px;
+  }
+
+  .permit-link {
+    float: right;
+  }
+}

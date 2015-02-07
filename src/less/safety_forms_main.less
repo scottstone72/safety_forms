@@ -1,0 +1,49 @@
+@import (reference) "bootstrap.less";
+@import (reference) "overrides.less";
+@import (reference) "variables.less";
+
+// This hides jquery datepicker until user clicks the show details and expands a field,
+// datepicker cannot attach itself to and invisible element or find its position.
+#ui-datepicker-div {
+  display: none;
+}
+
+h1.page-header {
+  margin-bottom: 0;
+}
+
+.region.region-content.well {
+  border: none;
+  padding-top: 20px;
+  margin-top: 0;
+  background-color: inherit;
+  font-size: 1.1em;
+}
+
+.form-list {
+  padding-top: 30px;
+  .form-list-item {
+    color:#ffffff;
+    margin-bottom: 20px;
+    .center-block();
+  }
+
+div.bkgd-image {
+
+  .make-sm-column(3);
+  .make-md-column(3);
+  .make-lg-column(3);
+}
+
+  .form-list-item:hover {
+    color:#ffffff;
+    text-decoration:none;
+  }
+}
+
+#load-form-text {
+  padding-left: 30px;
+}
+
+
+
