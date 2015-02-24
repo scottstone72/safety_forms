@@ -1,5 +1,5 @@
 {
-  "name": "checklist_inspections",
+  "name": "safety_forms",
   "version": "1.0.0",
   "description": "This is a module for a client.",
   "main": "index.php",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/scottstone72/checklist_inspections.git"
+    "url": "https://github.com/scottstone72/safety_forms.git"
   },
   "author": "Scott Johnstone",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/scottstone72/checklist_inspections/issues"
+    "url": "https://github.com/scottstone72/safety_forms/issues"
   },
-  "homepage": "https://github.com/scottstone72/checklist_inspections",
+  "homepage": "https://github.com/scottstone72/safety_forms",
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-autoprefixer": "^2.0.0",
