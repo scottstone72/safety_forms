@@ -9,8 +9,6 @@ drupal_add_js(drupal_get_path('module', 'safety_forms') . '/dist/js/safety_forms
  */
 function jsa_form($form, &$form_state) {
 
-  // todo: make custom form elements required
-
   $jsa_obj = new Safety_Forms();
   $jsa_num = $jsa_obj->get_jsa_num();
 
@@ -37,14 +35,23 @@ function jsa_form($form, &$form_state) {
     '#suffix' => '</div>',
   );
 
-  $form['main_container']['page_of'] = array(
+  $form['main_container']['date'] = array(
     '#type' => 'textfield',
-    '#title' => t('Page Of'),
-    '#default_value' => '',
-//    '#required' => TRUE,
-    '#prefix' => '<div class="page-of">',
+    '#title' => t('Date'),
+    '#default_value' => date('M d, Y'),
+    '#disabled' => TRUE,
+    '#prefix' => '<div class="date">',
     '#suffix' => '</div>',
   );
+
+//  $form['main_container']['page_of'] = array(
+//    '#type' => 'textfield',
+//    '#title' => t('Page Of'),
+//    '#default_value' => '',
+////    '#required' => TRUE,
+//    '#prefix' => '<div class="page-of">',
+//    '#suffix' => '</div>',
+//  );
 
   $form['main_container']['rig_num'] = array(
     '#type' => 'textfield',
@@ -61,15 +68,6 @@ function jsa_form($form, &$form_state) {
     '#default_value' => '',
 //    '#required' => TRUE,
     '#prefix' => '<div class="supervisor">',
-    '#suffix' => '</div>',
-  );
-
-  $form['main_container']['date'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Date'),
-    '#default_value' => date('M d, Y'),
-    '#disabled' => TRUE,
-    '#prefix' => '<div class="date">',
     '#suffix' => '</div>',
   );
 
@@ -367,7 +365,7 @@ function jsa_form_validate($form, &$form_state) {
   $data = array(
     'risk_assess' => $risk_assess_data,
     'job_task' => $form_state['values']['job_task'],
-    'page_of' => $form_state['values']['page_of'],
+//    'page_of' => $form_state['values']['page_of'],
     'weak_links' => $form_state['values']['weak_links'],
     'jsa_review' => $form_state['values']['jsa_review_select']['jsa_review'],
     'respirator' => $form_state['values']['jsa_review_select']['respirator'],

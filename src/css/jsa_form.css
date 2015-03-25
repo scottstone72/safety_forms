@@ -111,21 +111,21 @@ form#jsa-archive-form .jsa-num {
   form#jsa-form .jsa-num,
   form#jsa-archive-form .jsa-num {
     float: left;
-    width: 33.33333333%;
+    width: 16.66666667%;
   }
 }
 @media (min-width: 992px) {
   form#jsa-form .jsa-num,
   form#jsa-archive-form .jsa-num {
     float: left;
-    width: 33.33333333%;
+    width: 16.66666667%;
   }
 }
 @media (min-width: 1200px) {
   form#jsa-form .jsa-num,
   form#jsa-archive-form .jsa-num {
     float: left;
-    width: 33.33333333%;
+    width: 16.66666667%;
   }
 }
 form#jsa-form .job-task,
@@ -139,50 +139,21 @@ form#jsa-archive-form .job-task {
   form#jsa-form .job-task,
   form#jsa-archive-form .job-task {
     float: left;
-    width: 50%;
+    width: 41.66666667%;
   }
 }
 @media (min-width: 992px) {
   form#jsa-form .job-task,
   form#jsa-archive-form .job-task {
     float: left;
-    width: 50%;
+    width: 41.66666667%;
   }
 }
 @media (min-width: 1200px) {
   form#jsa-form .job-task,
   form#jsa-archive-form .job-task {
     float: left;
-    width: 50%;
-  }
-}
-form#jsa-form .page-of,
-form#jsa-archive-form .page-of {
-  clear: left;
-  position: relative;
-  min-height: 1px;
-  padding-left: 15px;
-  padding-right: 15px;
-}
-@media (min-width: 768px) {
-  form#jsa-form .page-of,
-  form#jsa-archive-form .page-of {
-    float: left;
-    width: 50%;
-  }
-}
-@media (min-width: 992px) {
-  form#jsa-form .page-of,
-  form#jsa-archive-form .page-of {
-    float: left;
-    width: 50%;
-  }
-}
-@media (min-width: 1200px) {
-  form#jsa-form .page-of,
-  form#jsa-archive-form .page-of {
-    float: left;
-    width: 50%;
+    width: 41.66666667%;
   }
 }
 form#jsa-form .rig-num,
@@ -252,21 +223,21 @@ form#jsa-archive-form .date {
   form#jsa-form .date,
   form#jsa-archive-form .date {
     float: left;
-    width: 33.33333333%;
+    width: 41.66666667%;
   }
 }
 @media (min-width: 992px) {
   form#jsa-form .date,
   form#jsa-archive-form .date {
     float: left;
-    width: 33.33333333%;
+    width: 41.66666667%;
   }
 }
 @media (min-width: 1200px) {
   form#jsa-form .date,
   form#jsa-archive-form .date {
     float: left;
-    width: 33.33333333%;
+    width: 41.66666667%;
   }
 }
 form#jsa-form .risk-cont,

@@ -44,14 +44,23 @@ function jsa_archive_form($form, &$form_state, $args) {
       '#suffix' => '</div>',
     );
 
-    $form['main_container']['page_of'] = array(
+    $form['main_container']['date'] = array(
       '#type' => 'textfield',
-      '#title' => t('Page Of'),
-      '#default_value' => $jsa_form_data['page_of'],
+      '#title' => t('Date'),
+      '#default_value' => $val['date'],
       '#disabled' => TRUE,
-      '#prefix' => '<div class="page-of">',
+      '#prefix' => '<div class="date">',
       '#suffix' => '</div>',
     );
+
+//    $form['main_container']['page_of'] = array(
+//      '#type' => 'textfield',
+//      '#title' => t('Page Of'),
+//      '#default_value' => $jsa_form_data['page_of'],
+//      '#disabled' => TRUE,
+//      '#prefix' => '<div class="page-of">',
+//      '#suffix' => '</div>',
+//    );
 
     $form['main_container']['rig_num'] = array(
       '#type' => 'textfield',
@@ -68,15 +77,6 @@ function jsa_archive_form($form, &$form_state, $args) {
       '#default_value' => $val['supervisor'],
       '#disabled' => TRUE,
       '#prefix' => '<div class="supervisor">',
-      '#suffix' => '</div>',
-    );
-
-    $form['main_container']['date'] = array(
-      '#type' => 'textfield',
-      '#title' => t('Date'),
-      '#default_value' => $val['date'],
-      '#disabled' => TRUE,
-      '#prefix' => '<div class="date">',
       '#suffix' => '</div>',
     );
 
